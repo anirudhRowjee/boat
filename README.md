@@ -1,6 +1,11 @@
-CLOUD COMPUTING - UE20CS351
+# Boat: A Raft Implementation
 
-# Project: Implementing Raft Logic in Go
+Team Members:
+
+1. Anirudh Rowjee
+2.
+3.
+4.
 
 ## **In this project, you will:**
 
@@ -11,6 +16,7 @@ CLOUD COMPUTING - UE20CS351
 ## **What you're given:**
 
 You are provided with a GoLang project structure, which, when complete, will allow you to successfully demonstrate leader election and log replication via Raft. However, parts of the code are deliberately missing; Your job is to fill it in, and make sure that expected behaviour is observed in scenarios such as network partitioning.
+
 ```
 .
 ├── go.mod
@@ -33,7 +39,7 @@ You are provided with a GoLang project structure, which, when complete, will all
     └── 2.log
 ```
 
-The files server\_setup.go, raft\_node.go and raft\_cluster.go require no modification. raft\_node.go, however, contains vital information about the persistent state of a raft node itself, and is worth going through to better understand the flow of the code.
+The files server_setup.go, raft_node.go and raft_cluster.go require no modification. raft_node.go, however, contains vital information about the persistent state of a raft node itself, and is worth going through to better understand the flow of the code.
 
 ## **How you should start:**
 
@@ -77,7 +83,6 @@ The above command executes a couple of scenarios for your code. Read through the
 You could also instead tail -f the files with tmux, like you did for Experiment 4.
 
 For evaluation, you will need to walk through the output you got from the Tests 1 and 2 and explain why it's expected behaviour. You will also need to then execute test-cases given to you later and do the same. **(Test 3 given to you will fail by default; it's your job to explain why and how to fix it.) (refer to the last paragraph of 'how you should start')**
-
 
 ## **For queries, contact:**
 
