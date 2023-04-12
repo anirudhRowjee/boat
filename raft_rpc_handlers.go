@@ -37,7 +37,15 @@ func (this *RaftNode) HandleRequestVote(args RequestVoteArgs, reply *RequestVote
 	}
 
 	if LogVoteRequestMessages {
-		this.write_log("Received Vote Request from NODE %d; Args: %+v [currentTerm=%d, votedFor=%d, log index/term=(%d, %d)]", args.CandidateId, args, this.currentTerm, this.votedFor, nodeLastLogIndex, nodeLastLogTerm)
+		this.write_log(
+			"Received Vote Request from NODE %d; Args: %+v [currentTerm=%d, votedFor=%d, log index/term=(%d, %d)]",
+			args.CandidateId,
+			args,
+			this.currentTerm,
+			this.votedFor,
+			nodeLastLogIndex,
+			nodeLastLogTerm,
+		)
 	}
 
 	if args.Term > this.currentTerm {
@@ -48,9 +56,19 @@ func (this *RaftNode) HandleRequestVote(args RequestVoteArgs, reply *RequestVote
 	// THIS REQUEST, OR NOT
 	// All the variables that you need for the conditions have been defined above.
 	//-------------------------------------------------------------------------------------------/
-	if  { // TODO: what are the conditions necessary to vote? HINT: there's multiple.
+	if (args.Term == this.currentTerm) &&
+		((this.votedFor == -1 || this.votedFor == args.CandidateId) && (args.LastLogTerm >= this.lastApplied && args.LastLogIndex >= this.commitIndex)) {
 
-		// TODO: indicate that it has voted.
+		// TODO: what are the conditions necessary to vote? HINT: there's multiple.
+
+		// reply false if the term < currentTerm
+		// if VotedFor is null (the node is freshly initialized) or candidateID (person asking for the vote, i.e. has already voted for this candidate in this term -> Heartbeat?)
+		// AND
+		// The log is at least up to date as the receiver's log (match term and index)
+
+		reply.VoteGranted = true
+		this.write_log("Node %d votes for Candidate %d", this.id, args.CandidateId)
+		// Write that the vote has happened
 
 	} else {
 		reply.VoteGranted = false
@@ -101,6 +119,7 @@ func (this *RaftNode) HandleAppendEntries(args AppendEntriesArgs, reply *AppendE
 		this.write_log("Received %s from NODE %d; args: %+v", aeType, args.LeaderId, args)
 	}
 
+	// This means that the leader sending the AppendEntriesRPC is Legit! Become a follower
 	if args.Term > this.currentTerm {
 		this.becomeFollower(args.Term)
 	}

@@ -14,17 +14,11 @@ func init() {
 }
 
 type Cluster struct {
-	mu sync.Mutex
-
-	// nodes is a list of all the raft servers participating in a nodes.
-	nodes []*Server
-
-	// Maintains whether server is partioned or not
-	connected []bool
-
-	n int
-
-	t *testing.T
+	mu        sync.Mutex
+	nodes     []*Server // nodes is a list of all the raft servers participating in a nodes.
+	connected []bool    // Maintains whether server is partioned or not
+	n         int
+	t         *testing.T
 }
 
 func NewCluster(t *testing.T, n int) *Cluster {

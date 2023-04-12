@@ -25,24 +25,39 @@ type RaftNode struct {
 	peersIds []int
 
 	// Persistent state on all servers
+
+	// Latest term server has seen (initialized to 0 on first boot, increases monotonically)
 	currentTerm int
-	votedFor    int
-	log         []LogEntry
+	// candidateId that received vote in current term (or null if none)
+	votedFor int
+	// log entries; each entry contains command for state machine, and term when entry was received by leader (first index is 1)
+	log []LogEntry
 
 	// Volatile state on all servers
+
+	// index of highest log entry known to be committed (initialized to 0, increases monotonically)
 	commitIndex int
+	// index of highest log entry applied to state machine (initialized to 0, increases monotonically)
 	lastApplied int
 
 	// Volatile Raft state on leaders
-	nextIndex  map[int]int
+	// for each server, index of the next log entry to send to that server (initialized to leader last log index + 1)
+	nextIndex map[int]int
+	// for each server, index of highest log entry known to be replicated on server (initialized to 0, increases monotonically)
 	matchIndex map[int]int
 
 	// Utility States
-	state                        string
+
+	// Keeps track of whether the node is FOLLOWER, LEADER, or CANDIDATE
+	state string
+	// HACK Not sure why this is here
 	lastElectionTimerStartedTime time.Time
-	notifyToApplyCommit          chan int
-	LOG_ENTRIES                  bool
-	filePath                     string
+	// Channel on each server that the leader uses to notify when it's safe to commit
+	notifyToApplyCommit chan int
+	// ??
+	LOG_ENTRIES bool
+	// Main filepath to write logs to
+	filePath string
 
 	// Networking Component, do NOT worry about this whatsoever.
 	server *Server
@@ -110,7 +125,12 @@ func (this *RaftNode) applyCommitedLogEntries() {
 		defer f.Close()
 
 		for i, entry := range entriesToApply {
-			strentry := fmt.Sprintf("%s; T:[%d]; I:[%d]", entry.Command, this.currentTerm, this.commitIndex+i)
+			strentry := fmt.Sprintf(
+				"%s; T:[%d]; I:[%d]",
+				entry.Command,
+				this.currentTerm,
+				this.commitIndex+i,
+			)
 			f.WriteString(strentry)
 			f.WriteString("\n")
 		}

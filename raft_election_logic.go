@@ -5,9 +5,12 @@ import (
 	"time"
 )
 
-/* startElectionTimer implements an election timer. It should be launched whenever
+/*
+startElectionTimer implements an election timer. It should be launched whenever
 we want to start a timer towards becoming a candidate in a new election.
-This function runs as a go routine */
+This function runs as a goroutine
+*/
+
 func (this *RaftNode) startElectionTimer() {
 	timeoutDuration := time.Duration(3000+rand.Intn(3000)) * time.Millisecond
 	this.mu.Lock()
@@ -47,35 +50,49 @@ func (this *RaftNode) startElectionTimer() {
 
 // startElection starts a new election with this RN as a candidate.
 func (this *RaftNode) startElection() {
+
+	// Become a candidate
 	this.state = "Candidate"
+	// Increment the current term optimistically, hoping it's the latest
 	this.currentTerm += 1
+	// Aux info.
 	termWhenVoteRequested := this.currentTerm
 	this.lastElectionTimerStartedTime = time.Now()
-	this.votedFor = this.id
-	this.write_log("became Candidate with term=%d;", termWhenVoteRequested)
 
+	// Vote for Yourself! Very important.
+	this.votedFor = this.id
 	votesReceived := 1
+
+	this.write_log("became Candidate with term=%d;", termWhenVoteRequested)
 
 	// Send RequestVote RPCs to all other servers concurrently.
 	for _, peerId := range this.peersIds {
+
+		// Issue the RequestVoteRPCs in parallel
 		go func(peerId int) {
+
+			// This looks like a read lock? All other variables are goroutine-local, so not sure why there's a lock
 			this.mu.Lock()
 			var LastLogIndexWhenVoteRequested, LastLogTermWhenVoteRequested int
 
 			if len(this.log) > 0 {
+				// if there are already log entries, use that to find the "latest" term and index
 				lastIndex := len(this.log) - 1
 				LastLogIndexWhenVoteRequested, LastLogTermWhenVoteRequested = lastIndex, this.log[lastIndex].Term
 			} else {
+				// Otherwise just set to -1
 				LastLogIndexWhenVoteRequested, LastLogTermWhenVoteRequested = -1, -1
 			}
 			this.mu.Unlock()
 
+			// Create a RequestVoteRPC Request
 			args := RequestVoteArgs{
 				Term:         termWhenVoteRequested,
 				CandidateId:  this.id,
 				LastLogIndex: LastLogIndexWhenVoteRequested,
 				LastLogTerm:  LastLogTermWhenVoteRequested,
 
+				// MEGA sus. Perhaps a test infra thing, to simulate weak networks?
 				Latency: rand.Intn(500), // Ignore Latency.
 			}
 
@@ -84,12 +101,24 @@ func (this *RaftNode) startElection() {
 			}
 
 			var reply RequestVoteReply
+
+			// Send the Actual RequestVote RPC Call
 			if err := this.server.SendRPCCallTo(peerId, "RaftNode.RequestVote", args, &reply); err == nil {
+
+				// using `defer` here is valid and does not cause lock contention because
+				// despite being called in a loop, it is also called in an anon function that gets
+				// passed to a goroutine, and not in a loop isolated.
+				// It is NOT being assumed that the Defer will execute at the ending of the block, but
+				// at the end of the function.
+				// GG, Murali :D
 				this.mu.Lock()
 				defer this.mu.Unlock()
+
 				if LogVoteRequestMessages {
+					// Util check to see if we want to log or not
 					this.write_log("received RequestVoteReply from %d: %+v", peerId, reply)
 				}
+				// Looks like we became leader midway
 				if this.state != "Candidate" {
 					this.write_log("State changed from Candidate to %s", this.state)
 					return
@@ -97,15 +126,28 @@ func (this *RaftNode) startElection() {
 
 				// IMPLEMENT HANDLING THE VOTEREQUEST's REPLY;
 				// You probably need to have implemented becomeFollower before this.
+				// Check whether or not we have quorum - if we do, we are leader, and make those changes
+				// Else become follower
+				if reply.Term > this.currentTerm {
 
-				//-------------------------------------------------------------------------------------------/
-				if reply.Term > {
-					// TODO
-				} else if reply.Term ==  {
-					// TODO
+					// DONE:TODO
+					// Become Follower
+					this.becomeFollower(args.Term)
+
+				} else if reply.Term == this.currentTerm {
+
+					// DONE:TODO
+					// Considered a vote for this term?
+					if reply.VoteGranted == true {
+						votesReceived++
+
+						// If we have quorum, become leader
+						if votesReceived > (len(this.peersIds) / 2) {
+							this.startLeader()
+						}
+
+					}
 				}
-				//-------------------------------------------------------------------------------------------/
-
 			}
 		}(peerId)
 	}
@@ -118,8 +160,13 @@ func (this *RaftNode) startElection() {
 func (this *RaftNode) becomeFollower(term int) {
 	this.write_log("became Follower with term=%d; log=%v", term, this.log)
 
-	// IMPLEMENT becomeFollower; do you need to start a goroutine here, maybe?
-	//-------------------------------------------------------------------------------------------/
-	// TODO
-	//-------------------------------------------------------------------------------------------/
+	this.mu.Lock()
+	defer this.mu.Unlock()
+
+	// Set the state to be follower
+	this.state = "Follower"
+	// Set the term to be the term supplied
+	this.currentTerm = term
+	// HACK unsure about this, but let's see.
+	go this.startElectionTimer()
 }
