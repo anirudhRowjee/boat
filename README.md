@@ -3,9 +3,9 @@
 Team Members:
 
 1. Anirudh Rowjee
-2.
-3.
-4.
+2. Adarsh Liju Abraham
+3. Anushka Gupta
+4. Aaditya Krishna Vamshi 
 
 ## **In this project, you will:**
 
