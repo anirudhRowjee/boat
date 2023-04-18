@@ -120,19 +120,21 @@ func (this *RaftNode) broadcastHeartbeats() {
 						// Figure out how and where; HINT: look for a majority of matchCounts.
 
 						//-------------------------------------------------------------------------------------------/
+						// TODO // Tried by Adarsh Liju Abraham
 						for i := this.commitIndex + 1; i < len(this.log); i++ {
 							if this.log[i].Term == this.currentTerm {
 								matchCount := 1 // Leader itself
 
 								for _, peerId := range this.peersIds {
-									if { // TODO  // When should you update matchCount?
+									if this.matchIndex[peerId] >= i {
 										matchCount++
 									}
 								}
 
-								if { // TODO  // When should you update commitIndex to i?
+								if matchCount > len(this.peersIds)/2 && this.log[i].Term == this.currentTerm {
 									this.commitIndex = i
 								}
+
 							}
 						}
 						//-------------------------------------------------------------------------------------------/

@@ -1,0 +1,369 @@
+=== RUN   Test1
+12:10:48.030425 [0] listening at [::]:37065
+12:10:48.030624 [1] listening at [::]:44041
+12:10:48.030772 [2] listening at [::]:45555
+12:10:48.030903 [3] listening at [::]:38695
+12:10:48.031053 [4] listening at [::]:35903
+12:10:48.033785 AT NODE 1: Election timer started: 5.541s, with term=0
+12:10:48.033790 AT NODE 4: Election timer started: 4.008s, with term=0
+12:10:48.033837 AT NODE 0: Election timer started: 5.589s, with term=0
+12:10:48.033854 AT NODE 2: Election timer started: 4.27s, with term=0
+12:10:48.033792 AT NODE 3: Election timer started: 3.391s, with term=0
+12:10:51.434121 AT NODE 3: became Candidate with term=1;
+12:10:51.434396 AT NODE 3: Election timer started: 4.363s, with term=1
+12:10:51.434718 AT NODE 3: sending RequestVote to 0: {Term:1 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:354}
+12:10:51.434855 AT NODE 3: sending RequestVote to 4: {Term:1 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:471}
+12:10:51.434765 AT NODE 3: sending RequestVote to 2: {Term:1 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:311}
+12:10:51.434966 AT NODE 3: sending RequestVote to 1: {Term:1 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:366}
+12:10:51.769091 AT NODE 2: Received Vote Request from NODE 3; Args: {Term:1 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:311} [currentTerm=0, votedFor=-1, log index/term=(-1, -1)]
+12:10:51.769136 AT NODE 2: became Follower with term=1; log=[]
+12:10:51.811672 AT NODE 0: Received Vote Request from NODE 3; Args: {Term:1 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:354} [currentTerm=0, votedFor=-1, log index/term=(-1, -1)]
+12:10:51.811793 AT NODE 0: became Follower with term=1; log=[]
+12:10:51.823976 AT NODE 1: Received Vote Request from NODE 3; Args: {Term:1 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:366} [currentTerm=0, votedFor=-1, log index/term=(-1, -1)]
+12:10:51.824086 AT NODE 1: became Follower with term=1; log=[]
+12:10:51.929043 AT NODE 4: Received Vote Request from NODE 3; Args: {Term:1 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:471} [currentTerm=0, votedFor=-1, log index/term=(-1, -1)]
+12:10:51.929181 AT NODE 4: became Follower with term=1; log=[]
+12:10:55.834814 AT NODE 3: became Candidate with term=2;
+12:10:55.834930 AT NODE 3: Election timer started: 5.203s, with term=2
+12:10:55.834981 AT NODE 3: sending RequestVote to 0: {Term:2 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:189}
+12:10:55.835001 AT NODE 3: sending RequestVote to 2: {Term:2 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:48}
+12:10:55.835004 AT NODE 3: sending RequestVote to 1: {Term:2 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:213}
+12:10:55.835005 AT NODE 3: sending RequestVote to 4: {Term:2 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:188}
+12:11:01.235858 AT NODE 3: became Candidate with term=3;
+12:11:01.236139 AT NODE 3: Election timer started: 4.477s, with term=3
+12:11:01.236405 AT NODE 3: sending RequestVote to 4: {Term:3 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:335}
+12:11:01.236529 AT NODE 3: sending RequestVote to 0: {Term:3 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:271}
+12:11:01.236633 AT NODE 3: sending RequestVote to 2: {Term:3 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:139}
+12:11:01.237511 AT NODE 3: sending RequestVote to 1: {Term:3 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:48}
+12:11:05.836431 AT NODE 3: became Candidate with term=4;
+12:11:05.836677 AT NODE 3: Election timer started: 5.893s, with term=4
+12:11:05.836844 AT NODE 3: sending RequestVote to 0: {Term:4 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:476}
+12:11:05.837277 AT NODE 3: sending RequestVote to 2: {Term:4 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:403}
+12:11:05.837277 AT NODE 3: sending RequestVote to 1: {Term:4 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:452}
+12:11:05.837277 AT NODE 3: sending RequestVote to 4: {Term:4 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:106}
+12:11:11.837254 AT NODE 3: became Candidate with term=5;
+12:11:11.837862 AT NODE 3: sending RequestVote to 2: {Term:5 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:157}
+12:11:11.837945 AT NODE 3: sending RequestVote to 0: {Term:5 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:248}
+12:11:11.837891 AT NODE 3: Election timer started: 3.161s, with term=5
+12:11:11.837947 AT NODE 3: sending RequestVote to 4: {Term:5 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:293}
+12:11:11.837873 AT NODE 3: sending RequestVote to 1: {Term:5 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:379}
+12:11:15.039481 AT NODE 3: became Candidate with term=6;
+12:11:15.040092 AT NODE 3: sending RequestVote to 1: {Term:6 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:303}
+12:11:15.040188 AT NODE 3: sending RequestVote to 0: {Term:6 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:351}
+12:11:15.040101 AT NODE 3: Election timer started: 5.87s, with term=6
+12:11:15.040142 AT NODE 3: sending RequestVote to 2: {Term:6 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:87}
+12:11:15.040153 AT NODE 3: sending RequestVote to 4: {Term:6 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:69}
+12:11:21.040497 AT NODE 3: became Candidate with term=7;
+12:11:21.041630 AT NODE 3: Election timer started: 5.38s, with term=7
+12:11:21.041735 AT NODE 3: sending RequestVote to 1: {Term:7 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:484}
+12:11:21.041636 AT NODE 3: sending RequestVote to 0: {Term:7 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:42}
+12:11:21.041642 AT NODE 3: sending RequestVote to 4: {Term:7 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:440}
+12:11:21.041700 AT NODE 3: sending RequestVote to 2: {Term:7 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:227}
+12:11:26.442491 AT NODE 3: became Candidate with term=8;
+12:11:26.443226 AT NODE 3: Election timer started: 5.868s, with term=8
+12:11:26.443295 AT NODE 3: sending RequestVote to 0: {Term:8 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:70}
+12:11:26.443415 AT NODE 3: sending RequestVote to 1: {Term:8 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:357}
+12:11:26.443356 AT NODE 3: sending RequestVote to 2: {Term:8 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:256}
+12:11:26.443371 AT NODE 3: sending RequestVote to 4: {Term:8 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:472}
+12:11:32.443471 AT NODE 3: became Candidate with term=9;
+12:11:32.443892 AT NODE 3: Election timer started: 5.722s, with term=9
+12:11:32.444139 AT NODE 3: sending RequestVote to 1: {Term:9 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:282}
+12:11:32.444245 AT NODE 3: sending RequestVote to 0: {Term:9 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:270}
+12:11:32.444258 AT NODE 3: sending RequestVote to 4: {Term:9 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:346}
+12:11:32.444141 AT NODE 3: sending RequestVote to 2: {Term:9 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:481}
+12:11:38.244462 AT NODE 3: became Candidate with term=10;
+12:11:38.245025 AT NODE 3: Election timer started: 4.408s, with term=10
+12:11:38.245422 AT NODE 3: sending RequestVote to 2: {Term:10 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:173}
+12:11:38.245475 AT NODE 3: sending RequestVote to 1: {Term:10 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:493}
+12:11:38.245458 AT NODE 3: sending RequestVote to 0: {Term:10 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:206}
+12:11:38.245462 AT NODE 3: sending RequestVote to 4: {Term:10 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:123}
+12:11:42.845551 AT NODE 3: became Candidate with term=11;
+12:11:42.846105 AT NODE 3: Election timer started: 4.698s, with term=11
+12:11:42.846181 AT NODE 3: sending RequestVote to 2: {Term:11 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:132}
+12:11:42.846309 AT NODE 3: sending RequestVote to 4: {Term:11 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:484}
+12:11:42.846415 AT NODE 3: sending RequestVote to 0: {Term:11 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:249}
+12:11:42.846324 AT NODE 3: sending RequestVote to 1: {Term:11 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:120}
+12:11:47.646899 AT NODE 3: became Candidate with term=12;
+12:11:47.647583 AT NODE 3: sending RequestVote to 0: {Term:12 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:245}
+12:11:47.647764 AT NODE 3: sending RequestVote to 4: {Term:12 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:309}
+12:11:47.647595 AT NODE 3: sending RequestVote to 2: {Term:12 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:90}
+12:11:47.647587 AT NODE 3: sending RequestVote to 1: {Term:12 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:340}
+12:11:47.647596 AT NODE 3: Election timer started: 5.997s, with term=12
+12:11:53.649465 AT NODE 3: became Candidate with term=13;
+12:11:53.649803 AT NODE 3: Election timer started: 3.309s, with term=13
+12:11:53.650299 AT NODE 3: sending RequestVote to 4: {Term:13 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:388}
+12:11:53.650310 AT NODE 3: sending RequestVote to 1: {Term:13 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:37}
+12:11:53.650324 AT NODE 3: sending RequestVote to 2: {Term:13 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:393}
+12:11:53.650328 AT NODE 3: sending RequestVote to 0: {Term:13 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:137}
+12:11:57.050400 AT NODE 3: became Candidate with term=14;
+12:11:57.051116 AT NODE 3: sending RequestVote to 0: {Term:14 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:255}
+12:11:57.051222 AT NODE 3: sending RequestVote to 2: {Term:14 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:132}
+12:11:57.051225 AT NODE 3: Election timer started: 4.901s, with term=14
+12:11:57.051231 AT NODE 3: sending RequestVote to 4: {Term:14 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:498}
+12:11:57.051310 AT NODE 3: sending RequestVote to 1: {Term:14 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:286}
+12:12:02.059434 AT NODE 3: became Candidate with term=15;
+12:12:02.059786 AT NODE 3: Election timer started: 5.717s, with term=15
+12:12:02.060036 AT NODE 3: sending RequestVote to 1: {Term:15 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:447}
+12:12:02.060095 AT NODE 3: sending RequestVote to 2: {Term:15 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:126}
+12:12:02.060061 AT NODE 3: sending RequestVote to 4: {Term:15 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:348}
+12:12:02.060061 AT NODE 3: sending RequestVote to 0: {Term:15 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:163}
+12:12:07.860794 AT NODE 3: became Candidate with term=16;
+12:12:07.861175 AT NODE 3: Election timer started: 3.265s, with term=16
+12:12:07.861493 AT NODE 3: sending RequestVote to 0: {Term:16 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:85}
+12:12:07.861550 AT NODE 3: sending RequestVote to 4: {Term:16 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:144}
+12:12:07.861651 AT NODE 3: sending RequestVote to 2: {Term:16 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:418}
+12:12:07.861671 AT NODE 3: sending RequestVote to 1: {Term:16 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:281}
+12:12:11.262199 AT NODE 3: became Candidate with term=17;
+12:12:11.262874 AT NODE 3: Election timer started: 4.593s, with term=17
+12:12:11.262967 AT NODE 3: sending RequestVote to 1: {Term:17 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:167}
+12:12:11.262887 AT NODE 3: sending RequestVote to 2: {Term:17 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:213}
+12:12:11.262902 AT NODE 3: sending RequestVote to 0: {Term:17 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:376}
+12:12:11.262901 AT NODE 3: sending RequestVote to 4: {Term:17 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:19}
+12:12:15.864119 AT NODE 3: became Candidate with term=18;
+12:12:15.864610 AT NODE 3: sending RequestVote to 0: {Term:18 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:397}
+12:12:15.864687 AT NODE 3: Election timer started: 4.344s, with term=18
+12:12:15.864624 AT NODE 3: sending RequestVote to 2: {Term:18 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:482}
+12:12:15.864883 AT NODE 3: sending RequestVote to 4: {Term:18 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:146}
+12:12:15.864760 AT NODE 3: sending RequestVote to 1: {Term:18 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:487}
+12:12:20.265172 AT NODE 3: became Candidate with term=19;
+12:12:20.265554 AT NODE 3: Election timer started: 4.547s, with term=19
+12:12:20.265700 AT NODE 3: sending RequestVote to 0: {Term:19 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:216}
+12:12:20.265727 AT NODE 3: sending RequestVote to 2: {Term:19 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:51}
+12:12:20.265761 AT NODE 3: sending RequestVote to 1: {Term:19 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:100}
+12:12:20.265764 AT NODE 3: sending RequestVote to 4: {Term:19 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:313}
+12:12:24.866813 AT NODE 3: became Candidate with term=20;
+12:12:24.867203 AT NODE 3: Election timer started: 3.594s, with term=20
+12:12:24.867588 AT NODE 3: sending RequestVote to 1: {Term:20 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:450}
+12:12:24.867592 AT NODE 3: sending RequestVote to 4: {Term:20 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:475}
+12:12:24.867629 AT NODE 3: sending RequestVote to 0: {Term:20 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:85}
+12:12:24.867664 AT NODE 3: sending RequestVote to 2: {Term:20 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:436}
+12:12:28.468272 AT NODE 3: became Candidate with term=21;
+12:12:28.468672 AT NODE 3: Election timer started: 3.932s, with term=21
+12:12:28.468833 AT NODE 3: sending RequestVote to 2: {Term:21 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:92}
+12:12:28.468894 AT NODE 3: sending RequestVote to 4: {Term:21 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:61}
+12:12:28.468856 AT NODE 3: sending RequestVote to 0: {Term:21 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:410}
+12:12:28.468855 AT NODE 3: sending RequestVote to 1: {Term:21 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:62}
+12:12:32.469267 AT NODE 3: became Candidate with term=22;
+12:12:32.469607 AT NODE 3: Election timer started: 4.14s, with term=22
+12:12:32.469882 AT NODE 3: sending RequestVote to 1: {Term:22 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:311}
+12:12:32.469954 AT NODE 3: sending RequestVote to 4: {Term:22 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:40}
+12:12:32.469890 AT NODE 3: sending RequestVote to 2: {Term:22 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:481}
+12:12:32.469902 AT NODE 3: sending RequestVote to 0: {Term:22 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:278}
+12:12:36.670212 AT NODE 3: became Candidate with term=23;
+12:12:36.670948 AT NODE 3: sending RequestVote to 1: {Term:23 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:226}
+12:12:36.671028 AT NODE 3: sending RequestVote to 0: {Term:23 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:446}
+12:12:36.671284 AT NODE 3: Election timer started: 5.494s, with term=23
+12:12:36.671088 AT NODE 3: sending RequestVote to 2: {Term:23 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:454}
+12:12:36.671084 AT NODE 3: sending RequestVote to 4: {Term:23 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:441}
+12:12:42.271979 AT NODE 3: became Candidate with term=24;
+12:12:42.272344 AT NODE 3: Election timer started: 5.359s, with term=24
+12:12:42.272668 AT NODE 3: sending RequestVote to 2: {Term:24 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:187}
+12:12:42.272691 AT NODE 3: sending RequestVote to 0: {Term:24 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:74}
+12:12:42.272719 AT NODE 3: sending RequestVote to 4: {Term:24 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:383}
+12:12:42.272825 AT NODE 3: sending RequestVote to 1: {Term:24 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:388}
+12:12:47.680300 AT NODE 3: became Candidate with term=25;
+12:12:47.680806 AT NODE 3: sending RequestVote to 1: {Term:25 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:230}
+12:12:47.680990 AT NODE 3: sending RequestVote to 0: {Term:25 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:248}
+12:12:47.680832 AT NODE 3: sending RequestVote to 2: {Term:25 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:307}
+12:12:47.680850 AT NODE 3: Election timer started: 3.864s, with term=25
+12:12:47.680990 AT NODE 3: sending RequestVote to 4: {Term:25 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:364}
+12:12:51.682449 AT NODE 3: became Candidate with term=26;
+12:12:51.682889 AT NODE 3: sending RequestVote to 0: {Term:26 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:402}
+12:12:51.682991 AT NODE 3: sending RequestVote to 4: {Term:26 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:258}
+12:12:51.682891 AT NODE 3: sending RequestVote to 1: {Term:26 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:201}
+12:12:51.682990 AT NODE 3: sending RequestVote to 2: {Term:26 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:260}
+12:12:51.682895 AT NODE 3: Election timer started: 4.831s, with term=26
+12:12:56.684538 AT NODE 3: became Candidate with term=27;
+12:12:56.685112 AT NODE 3: sending RequestVote to 4: {Term:27 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:319}
+12:12:56.685205 AT NODE 3: Election timer started: 3.472s, with term=27
+12:12:56.685268 AT NODE 3: sending RequestVote to 1: {Term:27 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:37}
+12:12:56.685415 AT NODE 3: sending RequestVote to 0: {Term:27 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:377}
+12:12:56.685128 AT NODE 3: sending RequestVote to 2: {Term:27 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:18}
+12:13:00.285620 AT NODE 3: became Candidate with term=28;
+12:13:00.286011 AT NODE 3: sending RequestVote to 0: {Term:28 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:406}
+12:13:00.286102 AT NODE 3: Election timer started: 5.261s, with term=28
+12:13:00.286167 AT NODE 3: sending RequestVote to 2: {Term:28 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:253}
+12:13:00.286249 AT NODE 3: sending RequestVote to 4: {Term:28 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:130}
+12:13:00.286410 AT NODE 3: sending RequestVote to 1: {Term:28 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:336}
+12:13:05.686731 AT NODE 3: became Candidate with term=29;
+12:13:05.687212 AT NODE 3: sending RequestVote to 4: {Term:29 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:99}
+12:13:05.687301 AT NODE 3: Election timer started: 3.629s, with term=29
+12:13:05.687327 AT NODE 3: sending RequestVote to 1: {Term:29 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:411}
+12:13:05.687536 AT NODE 3: sending RequestVote to 0: {Term:29 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:79}
+12:13:05.687463 AT NODE 3: sending RequestVote to 2: {Term:29 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:310}
+12:13:09.488284 AT NODE 3: became Candidate with term=30;
+12:13:09.488559 AT NODE 3: Election timer started: 5.724s, with term=30
+12:13:09.488724 AT NODE 3: sending RequestVote to 2: {Term:30 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:301}
+12:13:09.488800 AT NODE 3: sending RequestVote to 4: {Term:30 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:352}
+12:13:09.488856 AT NODE 3: sending RequestVote to 1: {Term:30 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:368}
+12:13:09.488837 AT NODE 3: sending RequestVote to 0: {Term:30 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:277}
+12:13:15.289522 AT NODE 3: became Candidate with term=31;
+12:13:15.289818 AT NODE 3: Election timer started: 4.769s, with term=31
+12:13:15.290077 AT NODE 3: sending RequestVote to 1: {Term:31 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:52}
+12:13:15.290177 AT NODE 3: sending RequestVote to 4: {Term:31 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:490}
+12:13:15.290083 AT NODE 3: sending RequestVote to 2: {Term:31 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:335}
+12:13:15.290113 AT NODE 3: sending RequestVote to 0: {Term:31 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:411}
+12:13:20.090711 AT NODE 3: became Candidate with term=32;
+12:13:20.091085 AT NODE 3: Election timer started: 5.171s, with term=32
+12:13:20.091266 AT NODE 3: sending RequestVote to 2: {Term:32 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:390}
+12:13:20.091463 AT NODE 3: sending RequestVote to 1: {Term:32 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:181}
+12:13:20.091622 AT NODE 3: sending RequestVote to 4: {Term:32 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:393}
+12:13:20.091514 AT NODE 3: sending RequestVote to 0: {Term:32 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:197}
+12:13:25.291314 AT NODE 3: became Candidate with term=33;
+12:13:25.291883 AT NODE 3: sending RequestVote to 4: {Term:33 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:284}
+12:13:25.292014 AT NODE 3: sending RequestVote to 1: {Term:33 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:453}
+12:13:25.292079 AT NODE 3: sending RequestVote to 0: {Term:33 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:379}
+12:13:25.292053 AT NODE 3: Election timer started: 3.288s, with term=33
+12:13:25.292177 AT NODE 3: sending RequestVote to 2: {Term:33 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:290}
+12:13:28.692616 AT NODE 3: became Candidate with term=34;
+12:13:28.693141 AT NODE 3: Election timer started: 4.755s, with term=34
+12:13:28.693274 AT NODE 3: sending RequestVote to 1: {Term:34 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:398}
+12:13:28.693303 AT NODE 3: sending RequestVote to 0: {Term:34 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:320}
+12:13:28.693324 AT NODE 3: sending RequestVote to 4: {Term:34 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:345}
+12:13:28.693337 AT NODE 3: sending RequestVote to 2: {Term:34 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:395}
+12:13:33.494193 AT NODE 3: became Candidate with term=35;
+12:13:33.494981 AT NODE 3: sending RequestVote to 4: {Term:35 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:368}
+12:13:33.495091 AT NODE 3: sending RequestVote to 1: {Term:35 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:352}
+12:13:33.495003 AT NODE 3: sending RequestVote to 2: {Term:35 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:393}
+12:13:33.495019 AT NODE 3: sending RequestVote to 0: {Term:35 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:281}
+12:13:33.495041 AT NODE 3: Election timer started: 3.576s, with term=35
+12:13:37.095713 AT NODE 3: became Candidate with term=36;
+12:13:37.096141 AT NODE 3: sending RequestVote to 4: {Term:36 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:444}
+12:13:37.096202 AT NODE 3: Election timer started: 4.531s, with term=36
+12:13:37.096214 AT NODE 3: sending RequestVote to 1: {Term:36 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:89}
+12:13:37.096226 AT NODE 3: sending RequestVote to 0: {Term:36 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:322}
+12:13:37.096290 AT NODE 3: sending RequestVote to 2: {Term:36 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:371}
+12:13:41.697325 AT NODE 3: became Candidate with term=37;
+12:13:41.697671 AT NODE 3: Election timer started: 4.572s, with term=37
+12:13:41.697886 AT NODE 3: sending RequestVote to 2: {Term:37 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:275}
+12:13:41.697955 AT NODE 3: sending RequestVote to 0: {Term:37 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:487}
+12:13:41.697886 AT NODE 3: sending RequestVote to 1: {Term:37 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:11}
+12:13:41.697929 AT NODE 3: sending RequestVote to 4: {Term:37 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:312}
+12:13:46.298759 AT NODE 3: became Candidate with term=38;
+12:13:46.299322 AT NODE 3: Election timer started: 3.08s, with term=38
+12:13:46.299380 AT NODE 3: sending RequestVote to 2: {Term:38 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:444}
+12:13:46.299345 AT NODE 3: sending RequestVote to 1: {Term:38 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:413}
+12:13:46.299347 AT NODE 3: sending RequestVote to 4: {Term:38 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:461}
+12:13:46.299356 AT NODE 3: sending RequestVote to 0: {Term:38 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:294}
+12:13:49.500354 AT NODE 3: became Candidate with term=39;
+12:13:49.500977 AT NODE 3: Election timer started: 5.723s, with term=39
+12:13:49.501057 AT NODE 3: sending RequestVote to 4: {Term:39 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:492}
+12:13:49.501155 AT NODE 3: sending RequestVote to 0: {Term:39 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:482}
+12:13:49.501043 AT NODE 3: sending RequestVote to 1: {Term:39 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:189}
+12:13:49.501043 AT NODE 3: sending RequestVote to 2: {Term:39 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:98}
+12:13:55.302132 AT NODE 3: became Candidate with term=40;
+12:13:55.302285 AT NODE 3: Election timer started: 5.958s, with term=40
+12:13:55.302342 AT NODE 3: sending RequestVote to 0: {Term:40 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:484}
+12:13:55.302363 AT NODE 3: sending RequestVote to 1: {Term:40 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:444}
+12:13:55.302403 AT NODE 3: sending RequestVote to 4: {Term:40 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:248}
+12:13:55.302349 AT NODE 3: sending RequestVote to 2: {Term:40 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:307}
+12:14:01.302493 AT NODE 3: became Candidate with term=41;
+12:14:01.303032 AT NODE 3: Election timer started: 3.504s, with term=41
+12:14:01.303209 AT NODE 3: sending RequestVote to 0: {Term:41 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:195}
+12:14:01.303299 AT NODE 3: sending RequestVote to 1: {Term:41 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:442}
+12:14:01.303274 AT NODE 3: sending RequestVote to 2: {Term:41 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:215}
+12:14:01.303310 AT NODE 3: sending RequestVote to 4: {Term:41 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:467}
+12:14:04.903356 AT NODE 3: became Candidate with term=42;
+12:14:04.903972 AT NODE 3: sending RequestVote to 4: {Term:42 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:366}
+12:14:04.904082 AT NODE 3: sending RequestVote to 2: {Term:42 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:164}
+12:14:04.904140 AT NODE 3: Election timer started: 4.91s, with term=42
+12:14:04.904005 AT NODE 3: sending RequestVote to 0: {Term:42 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:131}
+12:14:04.904060 AT NODE 3: sending RequestVote to 1: {Term:42 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:384}
+12:14:09.905170 AT NODE 3: became Candidate with term=43;
+12:14:09.905625 AT NODE 3: sending RequestVote to 4: {Term:43 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:190}
+12:14:09.905751 AT NODE 3: sending RequestVote to 0: {Term:43 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:23}
+12:14:09.905754 AT NODE 3: Election timer started: 3.772s, with term=43
+12:14:09.905768 AT NODE 3: sending RequestVote to 1: {Term:43 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:381}
+12:14:09.906972 AT NODE 3: sending RequestVote to 2: {Term:43 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:496}
+12:14:13.706386 AT NODE 3: became Candidate with term=44;
+12:14:13.707027 AT NODE 3: Election timer started: 5.908s, with term=44
+12:14:13.707061 AT NODE 3: sending RequestVote to 1: {Term:44 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:467}
+12:14:13.707259 AT NODE 3: sending RequestVote to 4: {Term:44 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:245}
+12:14:13.707071 AT NODE 3: sending RequestVote to 0: {Term:44 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:357}
+12:14:13.707074 AT NODE 3: sending RequestVote to 2: {Term:44 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:429}
+12:14:19.708217 AT NODE 3: became Candidate with term=45;
+12:14:19.708592 AT NODE 3: Election timer started: 4.991s, with term=45
+12:14:19.708744 AT NODE 3: sending RequestVote to 0: {Term:45 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:303}
+12:14:19.708824 AT NODE 3: sending RequestVote to 4: {Term:45 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:96}
+12:14:19.708829 AT NODE 3: sending RequestVote to 1: {Term:45 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:200}
+12:14:19.708984 AT NODE 3: sending RequestVote to 2: {Term:45 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:319}
+12:14:24.710220 AT NODE 3: became Candidate with term=46;
+12:14:24.710485 AT NODE 3: Election timer started: 4.816s, with term=46
+12:14:24.710552 AT NODE 3: sending RequestVote to 2: {Term:46 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:47}
+12:14:24.710580 AT NODE 3: sending RequestVote to 4: {Term:46 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:446}
+12:14:24.710598 AT NODE 3: sending RequestVote to 1: {Term:46 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:392}
+12:14:24.710610 AT NODE 3: sending RequestVote to 0: {Term:46 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:423}
+12:14:29.717703 AT NODE 3: became Candidate with term=47;
+12:14:29.725145 AT NODE 3: sending RequestVote to 0: {Term:47 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:227}
+12:14:29.725168 AT NODE 3: sending RequestVote to 4: {Term:47 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:411}
+12:14:29.725154 AT NODE 3: Election timer started: 3.705s, with term=47
+12:14:29.725162 AT NODE 3: sending RequestVote to 2: {Term:47 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:38}
+12:14:29.725177 AT NODE 3: sending RequestVote to 1: {Term:47 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:3}
+12:14:33.526353 AT NODE 3: became Candidate with term=48;
+12:14:33.526783 AT NODE 3: Election timer started: 5.006s, with term=48
+12:14:33.526835 AT NODE 3: sending RequestVote to 1: {Term:48 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:20}
+12:14:33.526921 AT NODE 3: sending RequestVote to 0: {Term:48 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:313}
+12:14:33.526999 AT NODE 3: sending RequestVote to 2: {Term:48 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:61}
+12:14:33.526898 AT NODE 3: sending RequestVote to 4: {Term:48 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:248}
+12:14:38.727127 AT NODE 3: became Candidate with term=49;
+12:14:38.727448 AT NODE 3: Election timer started: 4.69s, with term=49
+12:14:38.727668 AT NODE 3: sending RequestVote to 0: {Term:49 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:0}
+12:14:38.727770 AT NODE 3: sending RequestVote to 2: {Term:49 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:140}
+12:14:38.727876 AT NODE 3: sending RequestVote to 1: {Term:49 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:308}
+12:14:38.727781 AT NODE 3: sending RequestVote to 4: {Term:49 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:198}
+12:14:43.528230 AT NODE 3: became Candidate with term=50;
+12:14:43.528709 AT NODE 3: sending RequestVote to 0: {Term:50 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:162}
+12:14:43.528765 AT NODE 3: sending RequestVote to 4: {Term:50 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:95}
+12:14:43.528835 AT NODE 3: sending RequestVote to 2: {Term:50 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:256}
+12:14:43.528803 AT NODE 3: Election timer started: 5.792s, with term=50
+12:14:43.528833 AT NODE 3: sending RequestVote to 1: {Term:50 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:463}
+12:14:49.329994 AT NODE 3: became Candidate with term=51;
+12:14:49.330106 AT NODE 3: Election timer started: 5.243s, with term=51
+12:14:49.330178 AT NODE 3: sending RequestVote to 0: {Term:51 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:260}
+12:14:49.330254 AT NODE 3: sending RequestVote to 2: {Term:51 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:262}
+12:14:49.330265 AT NODE 3: sending RequestVote to 4: {Term:51 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:333}
+12:14:49.330181 AT NODE 3: sending RequestVote to 1: {Term:51 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:33}
+12:14:54.730559 AT NODE 3: became Candidate with term=52;
+12:14:54.730931 AT NODE 3: Election timer started: 4.97s, with term=52
+12:14:54.731218 AT NODE 3: sending RequestVote to 1: {Term:52 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:260}
+12:14:54.731320 AT NODE 3: sending RequestVote to 4: {Term:52 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:321}
+12:14:54.731236 AT NODE 3: sending RequestVote to 0: {Term:52 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:223}
+12:14:54.731251 AT NODE 3: sending RequestVote to 2: {Term:52 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:295}
+12:14:59.731969 AT NODE 3: became Candidate with term=53;
+12:14:59.732066 AT NODE 3: Election timer started: 3.091s, with term=53
+12:14:59.732133 AT NODE 3: sending RequestVote to 2: {Term:53 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:346}
+12:14:59.732151 AT NODE 3: sending RequestVote to 1: {Term:53 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:387}
+12:14:59.732137 AT NODE 3: sending RequestVote to 0: {Term:53 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:43}
+12:14:59.732146 AT NODE 3: sending RequestVote to 4: {Term:53 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:308}
+12:15:02.933073 AT NODE 3: became Candidate with term=54;
+12:15:02.933582 AT NODE 3: sending RequestVote to 0: {Term:54 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:171}
+12:15:02.933691 AT NODE 3: sending RequestVote to 2: {Term:54 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:157}
+12:15:02.933764 AT NODE 3: Election timer started: 3.875s, with term=54
+12:15:02.933804 AT NODE 3: sending RequestVote to 4: {Term:54 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:274}
+12:15:02.933839 AT NODE 3: sending RequestVote to 1: {Term:54 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:115}
+12:15:06.934721 AT NODE 3: became Candidate with term=55;
+12:15:06.934934 AT NODE 3: sending RequestVote to 0: {Term:55 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:200}
+12:15:06.934967 AT NODE 3: sending RequestVote to 2: {Term:55 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:352}
+12:15:06.934999 AT NODE 3: Election timer started: 3s, with term=55
+12:15:06.934995 AT NODE 3: sending RequestVote to 1: {Term:55 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:309}
+12:15:06.935002 AT NODE 3: sending RequestVote to 4: {Term:55 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:215}
+12:15:09.935305 AT NODE 3: became Candidate with term=56;
+12:15:09.935823 AT NODE 3: sending RequestVote to 2: {Term:56 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:99}
+12:15:09.935976 AT NODE 3: Election timer started: 4.533s, with term=56
+12:15:09.936098 AT NODE 3: sending RequestVote to 4: {Term:56 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:198}
+12:15:09.935985 AT NODE 3: sending RequestVote to 1: {Term:56 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:267}
+12:15:09.936011 AT NODE 3: sending RequestVote to 0: {Term:56 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:484}
+12:15:14.536216 AT NODE 3: became Candidate with term=57;
+12:15:14.536757 AT NODE 3: sending RequestVote to 4: {Term:57 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:287}
+12:15:14.536820 AT NODE 3: sending RequestVote to 2: {Term:57 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:111}
+12:15:14.536901 AT NODE 3: Election timer started: 4.044s, with term=57
+12:15:14.537008 AT NODE 3: sending RequestVote to 0: {Term:57 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:22}
+12:15:14.536886 AT NODE 3: sending RequestVote to 1: {Term:57 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:180}
+12:15:18.738196 AT NODE 3: became Candidate with term=58;
+12:15:18.738587 AT NODE 3: Election timer started: 5.664s, with term=58
+12:15:18.738850 AT NODE 3: sending RequestVote to 1: {Term:58 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:318}
+12:15:18.738982 AT NODE 3: sending RequestVote to 2: {Term:58 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:48}
+12:15:18.739035 AT NODE 3: sending RequestVote to 4: {Term:58 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:458}
+12:15:18.738877 AT NODE 3: sending RequestVote to 0: {Term:58 CandidateId:3 LastLogIndex:-1 LastLogTerm:-1 Latency:489}
+signal: interrupt
+FAIL	RaftLogReplication	271.404s
