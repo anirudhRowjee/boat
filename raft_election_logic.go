@@ -167,6 +167,13 @@ func (this *RaftNode) becomeFollower(term int) {
 	this.state = "Follower"
 	// Set the term to be the term supplied
 	this.currentTerm = term
+
+	// HACK @Author = Adarsh Liju Abraham
+
+	// I feel a reset is required here
+	this.votedFor = -1
+	this.lastElectionTimerStartedTime = time.Now()
 	// HACK unsure about this, but let's see.
+	// I feel this will work for now
 	go this.startElectionTimer()
 }
